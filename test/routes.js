@@ -89,11 +89,9 @@ tape('should get reverse', function (t) {
     input: 'stringtoreverse',
     output: 'esreverotgnirts'
   }
-
   var url = '/reverse/' + expected.input
   servertest(server(), url, {encoding: 'json'}, function (err, res) {
     t.ifError(err, 'no error')
-
     t.equal(res.statusCode, 200, 'correct statusCode')
     t.deepEqual(res.body, expected, 'values should match')
     t.end()
